@@ -28,7 +28,7 @@ app.use ('/api/notes', require ('./routes/notes'));
 app.use ('/api/users', require ('./routes/users')); 
 app.use ('/api/images', require ('./routes/images')); 
 app.use ('/api/upload', require ('./routes/upload')); 
-
+app.use ('/api/emprendedores', require ('./routes/emprendedores')); 
 
 
 //cloudinary
