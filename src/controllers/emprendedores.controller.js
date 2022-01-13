@@ -50,11 +50,11 @@ emprendedorCtrl.updateEmprendedor=
             
            
             const {  nombre, activo, tags, resena, telefono, mail, redes, imagen, nombre_emprendimiento} = req.body;
-                  
-           
-            await Emprendedor.findOneAndUpdate (req.params.id,  { nombre, activo, tags, resena, telefono, mail, redes, imagen,nombre_emprendimiento })
+        
+            const filter =  { "_id" : req.params.id }
+            const respuesta = await Emprendedor.findOneAndUpdate (filter,  { nombre, activo, tags, resena, telefono, mail, redes, imagen,nombre_emprendimiento })
             
-          
+        
             res.json ({message : ['Emprendedor Actualizado']})
         }
 
