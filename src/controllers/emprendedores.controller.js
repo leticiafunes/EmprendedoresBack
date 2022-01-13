@@ -43,6 +43,8 @@ emprendedorCtrl.deleteEmprendedor =
 
         }
 
+        //Primer commit
+
 emprendedorCtrl.updateEmprendedor=  
         async (req, res) => {
             
@@ -55,6 +57,9 @@ emprendedorCtrl.updateEmprendedor=
           
             res.json ({message : ['Emprendedor Actualizado']})
         }
+
+
+
 
 
         
