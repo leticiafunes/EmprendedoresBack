@@ -16,7 +16,7 @@ emprendedorCtrl.createEmprendedor =  async (req, res) => {
 
     
 
-    const {  nombre, activo, tags, resena, telefono, mail, redes, imagen, nombre_emprendimiento } = req.body;
+    const {  nombre, activo, tags, resena, telefono, mail, redes, imagen, nombre_emprendimiento, rubro, descripcioncorta } = req.body;
 
       const newEmprendedor= new Emprendedor ({
         nombre, 
@@ -27,7 +27,9 @@ emprendedorCtrl.createEmprendedor =  async (req, res) => {
         mail, 
         redes, 
         imagen,
-        nombre_emprendimiento})
+        nombre_emprendimiento,
+        rubro,
+        descripcioncorta})
         
         await newEmprendedor.save();
         
@@ -49,10 +51,10 @@ emprendedorCtrl.updateEmprendedor=
         async (req, res) => {
             
            
-            const {  nombre, activo, tags, resena, telefono, mail, redes, imagen, nombre_emprendimiento} = req.body;
+            const {  nombre, activo, tags, resena, telefono, mail, redes, imagen, nombre_emprendimiento, rubro, descripcioncorta} = req.body;
         
             const filter =  { "_id" : req.params.id }
-            const respuesta = await Emprendedor.findOneAndUpdate (filter,  { nombre, activo, tags, resena, telefono, mail, redes, imagen,nombre_emprendimiento })
+            const respuesta = await Emprendedor.findOneAndUpdate (filter,  { nombre, activo, tags, resena, telefono, mail, redes, imagen,nombre_emprendimiento, rubro, descripcioncorta })
             
         
             res.json ({message : ['Emprendedor Actualizado']})

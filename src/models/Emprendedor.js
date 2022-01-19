@@ -9,6 +9,13 @@ const emprendedorSchema = new Schema  ({
         type: String,
         required: true
     },
+    rubro: {
+        type: String
+        
+    },
+    descripcioncorta: {
+        type: String
+    },
     imagen:{
         type: String,
         required: true
