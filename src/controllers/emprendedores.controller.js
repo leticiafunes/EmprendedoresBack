@@ -14,7 +14,7 @@ emprendedorCtrl.getEmprendedores =  async (req, res) => {
 
 emprendedorCtrl.createEmprendedor =  async (req, res) => {
 
-    console.log (req.body);
+    
 
     const {  nombre, activo, tags, resena, telefono, mail, redes, imagen, nombre_emprendimiento } = req.body;
 

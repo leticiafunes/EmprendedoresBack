@@ -16,7 +16,7 @@ imagesCtrl.createImage =  async (req, res) => {
 
     const {file} = req.files;
 
-    console.log (file)
+    
     res.json ('Images post')
 
 }

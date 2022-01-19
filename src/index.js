@@ -1,6 +1,6 @@
 require('dotenv').config();
 const URI = process.env.MONGODB_URI ? process.env.MONGODB_URI :'mongodb://localhost/databasetest';
-console.log ('URI: ' + process.env.MONGODB_URI);
+
 
 const app = require ('./app');
 const database= require ('./database');
