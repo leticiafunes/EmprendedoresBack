@@ -10,21 +10,27 @@ const userSchema = new Schema  ({
     }, 
     nombre: {
         type: String,
-        required: true,
         trim: true
     }, 
     apellido: {
         type: String,
+        trim: true
+    }, 
+    password: {
+        type: String,
         required: true,
         trim: true
-    }
+    },
+    
+    nivel: {
+        type: String,
+        required: true,
+        trim: true
+    }},
+    { timestamps: true}
+    
 
 
-
-    }, { timestamps: true}
-    
-    
-    
     );
 
 module.exports =  model ('User', userSchema);

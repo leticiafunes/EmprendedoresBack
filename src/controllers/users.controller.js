@@ -15,11 +15,13 @@ usersCtrl.getUsers =  async (req, res) => {
 usersCtrl.createUser =  async (req, res) => {
 
 
-    const {username, nombre, apellido} = req.body;
+    const {username, nombre, apellido, password, nivel} = req.body;
     const newUser = new User ({
         username, 
         nombre, 
-        apellido});
+        apellido, 
+        password, 
+        nivel});
     await  newUser.save ();
     res.json ('Usuario Creado');
 }
@@ -36,10 +38,21 @@ usersCtrl.deleteUser =  async (req, res) => {
 
    usersCtrl.getUser  =  async (req, res) => { 
     const user = await  User.findById (req.params.id);
-    res.json ({message : ['Un Usuario']})
+    res.json (user)
+
 
 }
 
+usersCtrl.updateUser=  
+        async (req, res) => {
+            
+            const {username, nombre, apellido, password, nivel} = req.body;
+            const filter =  { "_id" : req.params.id }
+            const user = await User.findOneAndUpdate (filter, {username, nombre, apellido, password, nivel} )
+      
+            res.json (user)
+           
+        }
 
 
 
