@@ -36,8 +36,7 @@ const emprendedorSchema = new Schema  ({
        
     },
     mail: {
-        type: String,
-        required: true
+        type: String
     },
     redes: {
         type: []        
